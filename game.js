@@ -1,6 +1,6 @@
-const {Engine, Render, Runner, World, Bodies,} = Matter;
+const {Engine, Render, Runner, World, Bodies} = Matter;
  
-const width = 800;
+const width = 600;
 const height = 600;
 
 
@@ -20,16 +20,16 @@ Runner.run(Runner.create(), engine);
 
 
 const shape= [
-Bodies.rectangle(400,0,800,20,{
+Bodies.rectangle(width/2,0,width,20,{
     isStatic: true
 }),
-Bodies.rectangle(400,600,800,20,{
+Bodies.rectangle(width/2,height,width,20,{
     isStatic: true
 }),
-Bodies.rectangle(0,300,20,600,{
+Bodies.rectangle(0,height/2,20,height,{
     isStatic: true
 }),
-Bodies.rectangle(800,300,20,600,{
+Bodies.rectangle(width,height/2,20,height,{
     isStatic: true
 })
 ]
