@@ -1,10 +1,10 @@
 const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
 
-const cellsHorizontal= 14;
-const cellsVertical= 10; 
-const width = window.innerWidth;
-const height = window.innerHeight;
+const cellsHorizontal= 20;
+const cellsVertical= 15; 
+const width = window.innerWidth - 3.5;
+const height = window.innerHeight - 3.5;
 const unitLengthX = width / cellsHorizontal;
 const unitLengthY = height / cellsVertical;
 
@@ -201,6 +201,7 @@ Events.on(engine, 'collisionStart', event => {
         const labels = ['ball', 'goal'];
 
         if (labels.includes(collision.bodyA.label) && labels.includes(collision.bodyB.label)) {
+            document.querySelector('.winner').classList.remove('hidden');
             world.gravity.y = 1;
             world.bodies.forEach(body => {
 
@@ -210,6 +211,5 @@ Events.on(engine, 'collisionStart', event => {
 
             });
         }
-
     })
 });
